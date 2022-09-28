@@ -34,11 +34,18 @@ public class FigureNode implements ComponentNode
 	{
         // TODO unparse using a string builder
 		
+		//get the description
+		sb.append(_description);
+		
+		//unparse the points calling the method from point node database
 		_points.unparse(sb, level);
 		
-		_segments.unparse(sb.level);
 		
-		
-		
+		//unparse segments by calling the method from segment node database
+		_segments.unparse(sb, level);
+
     }
+	
+	
+	
 }

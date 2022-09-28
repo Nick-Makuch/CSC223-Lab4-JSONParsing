@@ -84,10 +84,24 @@ public class PointNode implements ComponentNode
 		
 		return true;
 	}
+	
 
     @Override
     public String toString()
     {
     	return _name + "(" + _x + ", " + _y + ")";
 	}
+
+	@Override
+	public void unparse(StringBuilder sb, int level) {
+		// TODO Auto-generated method stub
+		//loop through all the levels of the tree with the object
+		for(int i = 0; i < level; i ++)
+		//add this to the string builder
+		sb.append(this.indent(level) + this.toString());
+		
+	}
+	
+	
+	
 }
