@@ -1,3 +1,4 @@
+
 /**
  * A database to store segment nodes
  * 
@@ -176,3 +177,4 @@ public class SegmentNodeDatabase {
 	
 	
 }
+
