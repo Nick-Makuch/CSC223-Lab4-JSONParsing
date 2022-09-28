@@ -12,8 +12,16 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-public class PointNodeDatabase {
+import input.components.ComponentNode;
+
+public class PointNodeDatabase implements ComponentNode
+{
 	protected Set<PointNode> _points;
+	
+	interface ComponentNode{
+		void unparse(StringBuilder sb , int level);
+	}
+	
 	
 	/**
 	 * Creates a empty set of pointNodes
@@ -125,5 +133,9 @@ public class PointNodeDatabase {
 		return newP;
 	}
 		
+	
+	public void unparse(StringBuilder sb , int level) {
+		//TODO write the unparse method
+	}
 	
 }
