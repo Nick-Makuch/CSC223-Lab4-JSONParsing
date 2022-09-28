@@ -3,10 +3,10 @@
  * 
  * <p>Bugs: 
  * 
- * @author Jace Rettig and James Crawford
+ * @author Jace Rettig and James ???
  * @Date 9-1-22
  */
-package input.components;
+package input.components.point;
 
 import java.util.LinkedHashSet;
 import java.util.List;
