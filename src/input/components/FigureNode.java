@@ -33,5 +33,20 @@ public class FigureNode implements ComponentNode
 	public void unparse(StringBuilder sb, int level)
 	{
         // TODO unparse using a string builder
+		
+		
+		//doesn't return anything
+		
+		_points.unparse(sb, level);
+		
+		//_segments.unp
+		
+		
+		
+		
     }
+	
+	
+	
+	
 }
