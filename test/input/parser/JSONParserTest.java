@@ -10,6 +10,7 @@ import input.components.ComponentNode;
 import input.components.FigureNode;
 import input.exception.ParseException;
 
+
 class JSONParserTest
 {
 	public static ComponentNode runFigureParseTest(String filename)

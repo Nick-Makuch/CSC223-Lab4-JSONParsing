@@ -15,9 +15,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.*;
+
+import input.components.ComponentNode;
 import input.components.point.*;
 
-public class SegmentNodeDatabase {
+public class SegmentNodeDatabase implements ComponentNode {
 	private Map<PointNode, Set<PointNode>> _adjLists;
 	
 	public SegmentNodeDatabase() {
@@ -172,6 +174,13 @@ public class SegmentNodeDatabase {
 			segList += sn.toString() + " ";
 		}
 		return segList;
+	}
+
+	
+	@Override
+	public void unparse(StringBuilder sb, int level) 
+	{
+		//TODO fill in
 	}
 	
 	

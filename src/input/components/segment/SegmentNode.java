@@ -8,13 +8,14 @@
  */
 package input.components.segment;
 
+import input.components.ComponentNode;
 import input.components.point.PointNode;
 
 
 /**
  * A utility class only for representing ONE segment
  */
-public class SegmentNode
+public class SegmentNode implements ComponentNode
 {
 	protected PointNode _point1;
 	protected PointNode _point2;
@@ -50,5 +51,15 @@ public class SegmentNode
 	@Override
 	public String toString() {
 		return _point1.getName() + _point2.getName();
+	}
+	
+	@Override
+	public void unparse(StringBuilder sb, int level) 
+	{
+		String indentString = "";
+		for(int i = 0; i < level; i ++)
+			indentString += "	";
+		sb.append(indentString + this.toString());
+		
 	}
 }

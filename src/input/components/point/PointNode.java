@@ -8,13 +8,15 @@
  */
 package input.components.point;
 
+import input.components.ComponentNode;
 import utilities.math.MathUtilities;
 
 /**
  * A 2D Point (x, y).
  */
-public class PointNode
+public class PointNode implements ComponentNode
 {
+
 	protected static final String ANONYMOUS = "__UNNAMED";
 
 	protected double _x;
@@ -25,6 +27,15 @@ public class PointNode
 
 	protected String _name; 
 	public String getName() { return _name; }
+	
+	
+	
+	
+	public interface ComponentNode{
+		void unparse(StringBuilder sb , int level);
+		
+	}
+	
 
 	/**
 	 * Create a new Point with the specified coordinates.
@@ -73,10 +84,24 @@ public class PointNode
 		
 		return true;
 	}
+	
 
     @Override
     public String toString()
     {
     	return _name + "(" + _x + ", " + _y + ")";
 	}
+
+	@Override
+	public void unparse(StringBuilder sb, int level) {
+		// TODO Auto-generated method stub
+		//loop through all the levels of the tree with the object
+		for(int i = 0; i < level; i ++)
+		//add this to the string builder
+		sb.append(this.indent(level) + this.toString());
+		
+	}
+	
+	
+	
 }
