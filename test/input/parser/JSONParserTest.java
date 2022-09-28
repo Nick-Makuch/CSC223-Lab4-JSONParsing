@@ -17,7 +17,7 @@ class JSONParserTest
 		JSONParser parser = new JSONParser();
 
 		String figureStr = utilities.io.FileUtilities.readFileFilterComments(filename);
-		
+		System.out.print(figureStr);
 		return parser.parse(figureStr);
 	}
 	
