@@ -9,6 +9,7 @@
 package input.components.point;
 
 import input.components.ComponentNode;
+import utilities.io.StringUtilities;
 import utilities.math.MathUtilities;
 
 /**
@@ -98,7 +99,7 @@ public class PointNode implements ComponentNode
 		//loop through all the levels of the tree with the object
 		for(int i = 0; i < level; i ++)
 		//add this to the string builder
-		sb.append(this.indent(level) + this.toString());
+		sb.append(StringUtilities.indent(level) + this.toString());
 		
 	}
 	

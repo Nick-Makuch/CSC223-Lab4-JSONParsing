@@ -16,6 +16,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.*;
 
+import utilities.io.StringUtilities;
+
 import input.components.ComponentNode;
 import input.components.point.*;
 
@@ -180,7 +182,23 @@ public class SegmentNodeDatabase implements ComponentNode {
 	@Override
 	public void unparse(StringBuilder sb, int level) 
 	{
-		//TODO fill in
+		sb.append(StringUtilities.indent(level) + this.toString());
+	}
+	public String toString() 
+	{
+		String str = "";
+		
+		List<SegmentNode> uniqueList = this.asUniqueSegmentList();
+		
+		for (int i = 0; i < uniqueList.size(); i++) 
+		{
+			if(!uniqueList.get(i).getPoint1().getName().equals(uniqueList.get(i-1).getPoint1().getName()) || i==0);
+				str += "\n" + uniqueList.get(i).getPoint1().getName() + " : ";
+				
+			str += uniqueList.get(i).getPoint2().getName() + " ";
+		}
+		
+		return str;
 	}
 	
 	
