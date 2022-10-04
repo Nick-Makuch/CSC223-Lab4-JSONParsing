@@ -1,6 +1,7 @@
 package input.parser;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -46,7 +47,7 @@ public class JSONParser
 		
 		PointNodeDatabase points = nodeMaker(data);
 		
-		SegmentNodeDatabase segments = segmentMaker(data);
+		SegmentNodeDatabase segments = segmentMaker(data, points);
 
 		
 		
@@ -58,6 +59,8 @@ public class JSONParser
 //		System.out.println(shit.get("Points").toString());
 //		System.out.println(shit.get("Points").toString());
 
+		_astRoot = new FigureNode(desc, points, segments);
+		
 		return _astRoot;
 
 		// TODO: Build the whole AST, check for return class object, and return the root
@@ -83,7 +86,7 @@ public class JSONParser
 			JSONObject jsonPoint = (JSONObject) p; 
 			
 			//create a new point with the key being x and y for respective values
-			PointNode point = new PointNode(jsonPoint.getInt("x") , jsonPoint.getInt("y"));
+			PointNode point = new PointNode(jsonPoint.getString("name"), jsonPoint.getInt("x") , jsonPoint.getInt("y"));
 			
 			//add the point to the database
 			JSONPoints.put(point);
@@ -106,7 +109,7 @@ public class JSONParser
 	
 	
 	
-	private SegmentNodeDatabase segmentMaker(JSONObject data) {
+	private SegmentNodeDatabase segmentMaker(JSONObject data , PointNodeDatabase points) {
 		
 		SegmentNodeDatabase JSONSegmentDatabase =  new SegmentNodeDatabase();
 		
@@ -121,15 +124,16 @@ public class JSONParser
 			
 			String key = jobject.keys().next();
 			
-			JSONArray segments = json.getJSONArray(key);
+			JSONArray segments = jobject.getJSONArray(key);
 			
-			for(Object s2 : segments) {
+			//for(Object s2 : segments) {
 				
-				JSONObject jsonSegment = (JSONObject) s2;
+				//JSONObject jsonSegment = (JSONObject) s2;
 				
-				JSONSegmentDatabase.addAdjacencyList(key, jsonSeegment);
+				//JSONSegmentDatabase.addAdjacencyList(key, jsonSegment);
 				
-			}
+			//}
+			
 			
 			
 			//input is the two end points
@@ -137,8 +141,23 @@ public class JSONParser
 		}
 
 
-		return JSONSegments;
+		return JSONSegmentDatabase;
 
+	}
+	
+	/**
+	 * Helper method for segmentMaker()
+	 * */
+	private PointNode getPointNode(String s, PointNodeDatabase points) 
+	{
+		Object[] pointsList = points.asArray();
+		for(int i = 0; i < points.getSize(); i++) 
+		{
+			PointNode checker = (PointNode) pointsList[i];
+			if(checker.getName() == s)
+				return checker;
+		}
+		return null;
 	}
 	// TODO: implement supporting functionality
 

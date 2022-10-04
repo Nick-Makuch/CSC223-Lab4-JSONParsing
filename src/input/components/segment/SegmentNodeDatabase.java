@@ -199,10 +199,10 @@ public class SegmentNodeDatabase implements ComponentNode {
 			str += "\n";
 		}
 		
-			
+		sb.append(str);
 		
 		
-		sb.append(StringUtilities.indent(level) + this.toString());
+		//sb.append(StringUtilities.indent(level) + this.toString());
 	}
 	
 	
