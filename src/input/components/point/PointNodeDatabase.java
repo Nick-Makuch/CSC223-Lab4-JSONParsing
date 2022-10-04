@@ -135,7 +135,18 @@ public class PointNodeDatabase implements ComponentNode
 		
 	
 	public void unparse(StringBuilder sb , int level) {
-		//TODO write the unparse method
+		
+		//create the indent amount 
+		String indentString = "";
+		//loop through all the levels of the tree with the object
+		for(int i = 0; i < level; i ++)
+			//add a space of indent for each print of the points
+			indentString += " ";
+		//add this to the string builder
+		sb.append(indentString + this.toString());
+		
 	}
+		
+	
 	
 }
