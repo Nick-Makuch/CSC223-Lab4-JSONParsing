@@ -184,6 +184,8 @@ public class SegmentNodeDatabase implements ComponentNode {
 	{
 		sb.append(StringUtilities.indent(level) + this.toString());
 	}
+	
+	
 	public String toString() 
 	{
 		String str = "";

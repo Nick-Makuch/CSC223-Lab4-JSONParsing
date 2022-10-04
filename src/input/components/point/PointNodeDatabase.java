@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Set;
 
 import input.components.ComponentNode;
+import utilities.io.StringUtilities;
 
 public class PointNodeDatabase implements ComponentNode
 {
@@ -136,14 +137,9 @@ public class PointNodeDatabase implements ComponentNode
 	
 	public void unparse(StringBuilder sb , int level) {
 		
-		//create the indent amount 
-		String indentString = "";
-		//loop through all the levels of the tree with the object
-		for(int i = 0; i < level; i ++)
-			//add a space of indent for each print of the points
-			indentString += " ";
+		
 		//add this to the string builder
-		sb.append(indentString + this.toString());
+		sb.append(StringUtilities.indent(level) + this.toString());
 		
 	}
 		
