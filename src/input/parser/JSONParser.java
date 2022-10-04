@@ -123,18 +123,23 @@ public class JSONParser
 			JSONObject jobject = (JSONObject) s; 
 			
 			String key = jobject.keys().next();
+			PointNode keyAsPointNode = getPointNode(key, points);
 			
 			JSONArray segments = jobject.getJSONArray(key);
+			List<PointNode> segmentsList = new ArrayList();
 			
-			//for(Object s2 : segments) {
+			for(Object s2 : segments) {
 				
-				//JSONObject jsonSegment = (JSONObject) s2;
+				JSONObject jsonSegment = (JSONObject) s2;
 				
+				String key2 = jsonSegment.keys().next();
+				PointNode key2AsPointNode = getPointNode(key2, points);
+				segmentsList.add(key2AsPointNode);
 				//JSONSegmentDatabase.addAdjacencyList(key, jsonSegment);
 				
-			//}
+			}
 			
-			
+			JSONSegmentDatabase.addAdjacencyList(keyAsPointNode, segmentsList);
 			
 			//input is the two end points
 						
