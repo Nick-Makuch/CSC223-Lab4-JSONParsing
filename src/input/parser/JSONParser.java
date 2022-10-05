@@ -2,8 +2,6 @@ package input.parser;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -12,7 +10,6 @@ import org.json.JSONTokener;
 import input.components.*;
 import input.components.point.PointNode;
 import input.components.point.PointNodeDatabase;
-import input.components.segment.SegmentNode;
 import input.components.segment.SegmentNodeDatabase;
 import input.exception.ParseException;
 
@@ -60,7 +57,7 @@ public class JSONParser
 		PointNodeDatabase points = nodeMaker(data);
 		
 		//gets the segment database and assigns to variable
-		SegmentNodeDatabase segments = segmentMaker(data);
+		SegmentNodeDatabase segments = segmentMaker(data, points);
 
 		
 
@@ -68,7 +65,7 @@ public class JSONParser
 
 		// TODO: Build the whole AST, check for return class object, and return the root
 
-
+		_astRoot = new FigureNode(desc, points, segments);
 
 		return _astRoot;
 
@@ -89,7 +86,8 @@ public class JSONParser
 			JSONObject jsonPoint = (JSONObject) p; 
 			
 			//create a new point with the key being x and y for respective values
-			PointNode point = new PointNode(jsonPoint.getInt("x") , jsonPoint.getInt("y"));
+			PointNode point = new PointNode(jsonPoint.getString("name"), 
+					jsonPoint.getInt("x") , jsonPoint.getInt("y"));
 			
 			//add the point to the database
 			JSONPoints.put(point);
@@ -112,7 +110,7 @@ public class JSONParser
 	
 	
 	
-	private SegmentNodeDatabase segmentMaker(JSONObject data) {
+	private SegmentNodeDatabase segmentMaker(JSONObject data, PointNodeDatabase points) {
 		
 		SegmentNodeDatabase JSONSegmentDatabase =  new SegmentNodeDatabase();
 		
@@ -128,26 +126,44 @@ public class JSONParser
 			
 			//get the key since this will be used
 			String key = jobject.keys().next();
+			PointNode keyAsPointNode = getPointNode(key, points);
 			
 			//get the segments by getting everything after the key
 			JSONArray segments = jobject.getJSONArray(key);
+			List<PointNode> segmentsList = new ArrayList();
 			
 			//loop through the values after the key
 			for(Object s2 : segments) {
 				
-				//assign the value to a variable
 				JSONObject jsonSegment = (JSONObject) s2;
 				
-				//
-				SegmentNode segment = new SegmentNode(key , jsonSegment);
-				
+				String key2 = jsonSegment.keys().next();
+				PointNode key2AsPointNode = getPointNode(key2, points);
+				segmentsList.add(key2AsPointNode);				
 			}
-						
+				
+			JSONSegmentDatabase.addAdjacencyList(keyAsPointNode, segmentsList);
+			
 		}
 
 		//
 		return JSONSegmentDatabase;
 
+	}
+	
+	/**
+	 * Helper method for segmentMaker()
+	 * */
+	private PointNode getPointNode(String s, PointNodeDatabase points) 
+	{
+		Object[] pointsList = points.asArray();
+		for(int i = 0; i < points.getSize(); i++) 
+		{
+			PointNode checker = (PointNode) pointsList[i];
+			if(checker.getName() == s)
+				return checker;
+		}
+		return null;
 	}
 	// TODO: implement supporting functionality
 
