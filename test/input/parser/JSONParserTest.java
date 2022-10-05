@@ -40,7 +40,7 @@ class JSONParserTest
 		StringBuilder sb = new StringBuilder();
 
 		node.unparse(sb, 1);
-		System.out.println(sb.toString());
+		
 	}
 	
 	
@@ -55,7 +55,7 @@ class JSONParserTest
 		StringBuilder sb = new StringBuilder();
 
 		node.unparse(sb, 1);
-		System.out.println(sb.toString());
+		
 
 	}
 	
@@ -73,7 +73,7 @@ class JSONParserTest
 		StringBuilder sb = new StringBuilder();
 
 		node.unparse(sb, 1);
-		System.out.println(sb.toString());
+		
 
 	}
 	
@@ -91,7 +91,7 @@ class JSONParserTest
 		StringBuilder sb = new StringBuilder();
 
 		node.unparse(sb, 1);
-		System.out.println(sb.toString());
+		
 	}
 	
 	
