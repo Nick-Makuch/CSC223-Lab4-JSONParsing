@@ -18,7 +18,7 @@ class JSONParserTest
 		JSONParser parser = new JSONParser();
 
 		String figureStr = utilities.io.FileUtilities.readFileFilterComments(filename);
-		System.out.print(figureStr);
+		
 		return parser.parse(figureStr);
 	}
 	
@@ -39,7 +39,7 @@ class JSONParserTest
 		
 		StringBuilder sb = new StringBuilder();
 		node.unparse(sb, 0);
-		System.out.println(sb.toString());
+		
 	}
 	
 	
@@ -53,7 +53,7 @@ class JSONParserTest
 		
 		StringBuilder sb = new StringBuilder();
 		node.unparse(sb, 0);
-		System.out.println(sb.toString());
+		
 	}
 	
 	
@@ -69,7 +69,7 @@ class JSONParserTest
 		
 		StringBuilder sb = new StringBuilder();
 		node.unparse(sb, 0);
-		System.out.println(sb.toString());
+		
 	}
 	
 	
@@ -85,7 +85,7 @@ class JSONParserTest
 		
 		StringBuilder sb = new StringBuilder();
 		node.unparse(sb, 0);
-		System.out.println(sb.toString());
+		
 	}
 	
 	
