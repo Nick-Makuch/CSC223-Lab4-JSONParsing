@@ -131,11 +131,11 @@ public class JSONParser
 			
 			//get the segments by getting everything after the key
 			JSONArray segments = jobject.getJSONArray(key);
-			List<PointNode> segmentsList = new ArrayList();
+			List<PointNode> segmentsList = new ArrayList<>();
 			
 			//loop through the values after the key
 			for(Object s2 : segments) {
-				System.out.println(s2);
+		//		System.out.println(s2);
 			//	JSONObject jsonSegment = (JSONObject) s2;
 				
 				String key2 = (String) s2;
@@ -161,7 +161,7 @@ public class JSONParser
 		for(int i = 0; i < points.getSize(); i++) 
 		{
 			PointNode checker = (PointNode) pointsList[i];
-			if(checker.getName() == s)
+			if(checker.getName().equals(s))
 				return checker;
 		}
 		return null;

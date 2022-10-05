@@ -142,7 +142,8 @@ public class PointNodeDatabase implements ComponentNode
 		
 		
 		//add this to the string builder
-		sb.append(StringUtilities.indent(level) + this.toString());
+		for(PointNode point : _points)
+			sb.append(StringUtilities.indent(level) + point.toString());
 		
 	}
 		

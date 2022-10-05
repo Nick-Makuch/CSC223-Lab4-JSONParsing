@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.awt.print.Printable;
 import java.util.*;
 
 import utilities.io.StringUtilities;
@@ -92,7 +93,7 @@ public class SegmentNodeDatabase implements ComponentNode {
 	 */
 	private Set<PointNode> listToSet(List<PointNode> list) {
 		Set<PointNode> nodeSet = new HashSet<PointNode>();
-		for (PointNode node: list) {
+		for (PointNode node : list) {
 			nodeSet.add(node);
 		}
 		return nodeSet;
@@ -190,6 +191,7 @@ public class SegmentNodeDatabase implements ComponentNode {
 			for(PointNode value : _adjLists.get(key)) 
 				sb.append(value + " ");
 		}
+		System.out.println("hfjyfgjkugkfj" + sb);
 		
 	}
 	
