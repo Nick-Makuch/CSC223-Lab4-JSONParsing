@@ -140,8 +140,22 @@ public class PointNodeDatabase implements ComponentNode
 	
 	public void unparse(StringBuilder sb , int level) {
 		
+		//create an array list of the nodes
+		
+		ArraySet node = 
+		
+		//loop through all the nodes
+		
+			
+			//get the name 
+			//add a new line
+			//get x and y values 
+		
+		
+		
 		
 		//add this to the string builder
+		
 		sb.append(StringUtilities.indent(level) + this.toString());
 		
 	}

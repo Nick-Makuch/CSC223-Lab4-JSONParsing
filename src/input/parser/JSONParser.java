@@ -113,10 +113,11 @@ public class JSONParser
 	
 	private SegmentNodeDatabase segmentMaker(JSONObject data, PointNodeDatabase points) {
 		
+		//create a segment node database to add to 
 		SegmentNodeDatabase JSONSegmentDatabase =  new SegmentNodeDatabase();
 		
 		JSONArray segmentArray = data.getJSONArray("Segments");
-		System.out.println(segmentArray.toString());
+		//System.out.println(segmentArray.toString());
 		//JSONSegments.addAdjacencyList(the point, list of points);
 
 		//loop through the items in the segment array
@@ -131,10 +132,11 @@ public class JSONParser
 			
 			//get the segments by getting everything after the key
 			JSONArray segments = jobject.getJSONArray(key);
-			List<PointNode> segmentsList = new ArrayList();
+			List<PointNode> segmentsList = new ArrayList<PointNode>();
 			
 			//loop through the values after the key
 			for(Object s2 : segments) {
+				//TODO delete this thing later
 				System.out.println(s2);
 			//	JSONObject jsonSegment = (JSONObject) s2;
 				
