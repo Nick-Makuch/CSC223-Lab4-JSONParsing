@@ -40,6 +40,9 @@ public class PointNodeDatabase implements ComponentNode
 		_points = new LinkedHashSet<PointNode>(l);
 	}
 	
+	public int getSize() {return _points.size();}
+	public Object[] asArray(){return _points.toArray();}
+	
 	/**
 	 * Adds a pointNode to the database
 	 * @param p- the pointNode to add

@@ -168,7 +168,7 @@ public class SegmentNodeDatabase implements ComponentNode {
 	 * @return the list in string form
 	 */
 	public String segmentListToString(List<SegmentNode> list) {
-		String segList ="";
+		String segList = "";
 		if (list.size() < 0) return null;
 		
 		for (SegmentNode sn : list)
@@ -182,26 +182,48 @@ public class SegmentNodeDatabase implements ComponentNode {
 	@Override
 	public void unparse(StringBuilder sb, int level) 
 	{
-		sb.append(StringUtilities.indent(level) + this.toString());
+		String str = "";
+		
+		ArrayList<PointNode> keysArrayList = (ArrayList<PointNode>) _adjLists.keySet();
+		
+		for(int i = 0; i < keysArrayList.size(); i++) 
+		{
+			//adds key to string and puts values with said key into an arrayList
+			str += StringUtilities.indent(level) + keysArrayList.get(i).getName() + " : ";
+			ArrayList<PointNode> values = (ArrayList<PointNode>) _adjLists.get(keysArrayList.get(i));
+			
+			//adds each value to the string
+			for(int j = 0; i < values.size(); i++) 
+				str += values.get(j).getName() + " ";
+			
+			str += "\n";
+		}
+		
+		sb.append(str);
+		
+		
+		//sb.append(StringUtilities.indent(level) + this.toString());
 	}
 	
 	
-	public String toString() 
+	/*public String toString() 
 	{
 		String str = "";
 		
 		List<SegmentNode> uniqueList = this.asUniqueSegmentList();
 		
+		
+		str += uniqueList.get(0).getPoint1().getName() + " : ";
 		for (int i = 0; i < uniqueList.size(); i++) 
 		{
-			if(!uniqueList.get(i).getPoint1().getName().equals(uniqueList.get(i-1).getPoint1().getName()) || i==0);
+			if(!uniqueList.get(i).getPoint1().getName().equals(uniqueList.get(i-1).getPoint1().getName()));
 				str += "\n" + uniqueList.get(i).getPoint1().getName() + " : ";
 				
 			str += uniqueList.get(i).getPoint2().getName() + " ";
 		}
 		
 		return str;
-	}
+	}*/
 	
 	
 	
