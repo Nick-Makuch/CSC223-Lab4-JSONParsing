@@ -142,14 +142,8 @@ public class PointNodeDatabase implements ComponentNode
 		
 		sb.append("\n" + "Points:" + "\n" + "{" + "\n");
 		//add this to the string builder
-		for(PointNode point : _points)
-<<<<<<< Updated upstream
-			
-			
+		for(PointNode point : _points)		
 			sb.append(StringUtilities.indent(level) + "Point"+ point.toString() + "\n");
-=======
-			sb.append(StringUtilities.indent(level) + point.toString() + "\n");
->>>>>>> Stashed changes
 		
 	}
 		
