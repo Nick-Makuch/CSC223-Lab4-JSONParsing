@@ -40,31 +40,37 @@ public class JSONParser
 		JSONObject  JSONroot = (JSONObject)tokenizer.nextValue();
 		
 		
+		
+		//check if the file was empty
+		//if it was then throw the exception
+		if(JSONroot.isEmpty()) throw new ParseException();
+		
+		
+		
+		//this is all the data from the file assgined to a variable
 		JSONObject data = JSONroot.getJSONObject("Figure");
 		
+		
+		
+		
+		//calls the method to get the description and assign to variable
 		String desc = descriptionMaker(data);
 		
+		//gets the point database and assigns to a variable
 		PointNodeDatabase points = nodeMaker(data);
 		
+		//gets the segment database and assigns to variable
 		SegmentNodeDatabase segments = segmentMaker(data);
 
 		
-		
-//		System.out.println(JSONroot.keySet());
-		System.out.println(JSONroot.get("Figure"));
-//
-//		System.out.println(shit.keySet());
-//		System.out.println(shit.get("Points").toString());
-//		System.out.println(shit.get("Points").toString());
-//		System.out.println(shit.get("Points").toString());
 
-		return _astRoot;
+		
 
 		// TODO: Build the whole AST, check for return class object, and return the root
 
 
 
-
+		return _astRoot;
 
 	}
 
@@ -114,30 +120,33 @@ public class JSONParser
 		
 		//JSONSegments.addAdjacencyList(the point, list of points);
 
-		//loop through the given points and add each to the array
+		//loop through the items in the segment array
 		for(Object s : segmentArray) {
 			
+			//assign the item to an object
 			JSONObject jobject = (JSONObject) s; 
 			
+			//get the key since this will be used
 			String key = jobject.keys().next();
 			
-			JSONArray segments = json.getJSONArray(key);
+			//get the segments by getting everything after the key
+			JSONArray segments = jobject.getJSONArray(key);
 			
+			//loop through the values after the key
 			for(Object s2 : segments) {
 				
+				//assign the value to a variable
 				JSONObject jsonSegment = (JSONObject) s2;
 				
-				JSONSegmentDatabase.addAdjacencyList(key, jsonSeegment);
+				//
+				SegmentNode segment = new SegmentNode(key , jsonSegment);
 				
 			}
-			
-			
-			//input is the two end points
 						
 		}
 
-
-		return JSONSegments;
+		//
+		return JSONSegmentDatabase;
 
 	}
 	// TODO: implement supporting functionality

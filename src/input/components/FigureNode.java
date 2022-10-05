@@ -32,7 +32,6 @@ public class FigureNode implements ComponentNode
 	@Override
 	public void unparse(StringBuilder sb, int level)
 	{
-        // TODO unparse using a string builder
 		
 		//get the description
 		sb.append(_description);
