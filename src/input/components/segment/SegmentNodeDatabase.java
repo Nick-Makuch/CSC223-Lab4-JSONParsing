@@ -191,7 +191,7 @@ public class SegmentNodeDatabase implements ComponentNode {
 			for(PointNode value : _adjLists.get(key)) 
 				sb.append(value + " ");
 		}
-		System.out.println("hfjyfgjkugkfj" + sb);
+		
 		
 	}
 	

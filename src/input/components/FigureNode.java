@@ -43,7 +43,6 @@ public class FigureNode implements ComponentNode
 		//unparse segments by calling the method from segment node database
 		_segments.unparse(sb, level);
 		
-		System.out.println("la;fjsa;lfjas;lna;lga;lkfj");
 
     }
 	
