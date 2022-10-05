@@ -38,8 +38,13 @@ class JSONParserTest
 		assertTrue(node instanceof FigureNode);
 		
 		StringBuilder sb = new StringBuilder();
+<<<<<<< Updated upstream
 		node.unparse(sb, 0);
 		
+=======
+		node.unparse(sb, 1);
+		System.out.println(sb.toString());
+>>>>>>> Stashed changes
 	}
 	
 	
@@ -52,8 +57,13 @@ class JSONParserTest
 		assertTrue(node instanceof FigureNode);
 		
 		StringBuilder sb = new StringBuilder();
+<<<<<<< Updated upstream
 		node.unparse(sb, 0);
 		
+=======
+		node.unparse(sb, 1);
+		System.out.println(sb.toString());
+>>>>>>> Stashed changes
 	}
 	
 	
@@ -68,8 +78,13 @@ class JSONParserTest
 		assertTrue(node instanceof FigureNode);
 		
 		StringBuilder sb = new StringBuilder();
+<<<<<<< Updated upstream
 		node.unparse(sb, 0);
 		
+=======
+		node.unparse(sb, 1);
+		System.out.println(sb.toString());
+>>>>>>> Stashed changes
 	}
 	
 	
@@ -84,8 +99,13 @@ class JSONParserTest
 		assertTrue(node instanceof FigureNode);
 		
 		StringBuilder sb = new StringBuilder();
+<<<<<<< Updated upstream
 		node.unparse(sb, 0);
 		
+=======
+		node.unparse(sb, 1);
+		System.out.println(sb.toString());
+>>>>>>> Stashed changes
 	}
 	
 	
