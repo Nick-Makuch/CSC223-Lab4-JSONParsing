@@ -83,7 +83,7 @@ public class JSONParser
 		//loop through the given points and add each to the array
 		for(Object p : pointArray) {
 			//assign the variable to a value
-			System.out.println(p);
+		
 			JSONObject jsonPoint = (JSONObject) p; 
 			
 			//create a new point with the key being x and y for respective values
@@ -116,8 +116,7 @@ public class JSONParser
 		SegmentNodeDatabase JSONSegmentDatabase =  new SegmentNodeDatabase();
 		
 		JSONArray segmentArray = data.getJSONArray("Segments");
-		System.out.println(segmentArray.toString());
-		//JSONSegments.addAdjacencyList(the point, list of points);
+
 
 		//loop through the items in the segment array
 		for(Object s : segmentArray) {
@@ -135,7 +134,7 @@ public class JSONParser
 			
 			//loop through the values after the key
 			for(Object s2 : segments) {
-		//		System.out.println(s2);
+
 			//	JSONObject jsonSegment = (JSONObject) s2;
 				
 				String key2 = (String) s2;

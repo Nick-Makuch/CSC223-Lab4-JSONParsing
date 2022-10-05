@@ -140,10 +140,12 @@ public class PointNodeDatabase implements ComponentNode
 	
 	public void unparse(StringBuilder sb , int level) {
 		
-		
+		sb.append("\n" + "Points:" + "\n" + "{" + "\n");
 		//add this to the string builder
 		for(PointNode point : _points)
-			sb.append(StringUtilities.indent(level) + point.toString());
+			
+			
+			sb.append(StringUtilities.indent(level) + "Point"+ point.toString() + "\n");
 		
 	}
 		
