@@ -10,8 +10,28 @@ import input.components.FigureNode;
 import input.exception.ParseException;
 
 
+
+
+/**
+ * 
+ * A test class to test capability of parse and unparse methods
+ * 
+ * @author Nick, James, Sally
+ * @Date 10-5-22
+ */
+
 class JSONParserTest
+
+
 {
+	
+	
+
+	/*
+	 * 
+	 * Test method to run the test on the parse method
+	 */
+	
 	public static ComponentNode runFigureParseTest(String filename)
 	{
 		JSONParser parser = new JSONParser();
@@ -21,6 +41,13 @@ class JSONParserTest
 		return parser.parse(figureStr);
 	}
 	
+	
+
+	/*
+	 * 
+	 * Test method to ensure functionality with a empty file
+	 */
+	
 	@Test
 	void empty_json_string_test()
 	{
@@ -29,6 +56,13 @@ class JSONParserTest
 		assertThrows(ParseException.class, () -> { parser.parse("{}"); });
 	}
 
+	
+
+	/*
+	 * 
+	 * Test method to ensure functionality with a json file
+	 */
+	
 	@Test
 	void single_triangle_test()
 	{
@@ -46,6 +80,11 @@ class JSONParserTest
 	}
 	
 	
+
+	/*
+	 * 
+	 * Test method to ensure functionality with a json file
+	 */
 	
 	@Test
 	void collinear_line_segments_test()
@@ -64,6 +103,11 @@ class JSONParserTest
 	}
 	
 	
+
+	/*
+	 * 
+	 * Test method to ensure functionality with a json file
+	 */
 	
 	
 	
@@ -84,7 +128,10 @@ class JSONParserTest
 	}
 	
 	
-	
+	/*
+	 * 
+	 * Test method to ensure functionality with a json file
+	 */
 	
 	
 	@Test

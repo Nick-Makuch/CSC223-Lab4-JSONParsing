@@ -179,6 +179,16 @@ public class SegmentNodeDatabase implements ComponentNode {
 	}
 
 	
+	
+	
+
+	/*
+	 * 
+	 * Method to add all the segments in the correct format to a string builder
+	 * @param string builder and level
+	 */
+	
+	
 	@Override
 	public void unparse(StringBuilder sb, int level) 
 	{

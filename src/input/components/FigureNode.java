@@ -6,12 +6,18 @@ import input.components.point.PointNode;
 import input.components.point.PointNodeDatabase;
 import input.components.segment.SegmentNodeDatabase;
 
+
 /**
+ * 
  * A basic figure consists of points, segments, and an optional description
  * 
- * Each figure has distinct points and segments (thus unique database objects).
+ * Each figure has distinct points and segments (thus unique database objects). 
  * 
+ * @author Nick, James, Sally
+ * @Date 10-5-22
  */
+
+
 public class FigureNode implements ComponentNode
 {
 	protected String              _description;
@@ -29,6 +35,16 @@ public class FigureNode implements ComponentNode
 		_segments = segments;
 	}
 
+	
+
+	/*
+	 * 
+	 * Method that will unparse a json file. Adds the decsription, points, and 
+	 * segments to a string builder
+	 */
+	
+	
+	
 	@Override
 	public void unparse(StringBuilder sb, int level)
 	{

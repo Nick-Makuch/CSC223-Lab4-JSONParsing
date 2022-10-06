@@ -13,6 +13,19 @@ import input.components.point.PointNodeDatabase;
 import input.components.segment.SegmentNodeDatabase;
 import input.exception.ParseException;
 
+
+
+/**
+ * 
+ * A class to separate the description, points, and segments in 
+ * a figure passed through as a json file
+ * 
+ * @author Nick, James, Sally
+ * @Date 10-5-22
+ */
+
+
+
 public class JSONParser
 {
 	protected ComponentNode  _astRoot;
@@ -28,6 +41,15 @@ public class JSONParser
 		throw new ParseException("Parse error: " + message);
 	}
 
+	
+	
+	/*
+	 * 
+	 * Method to separate the description, the list of points
+	 * and the list of segments
+	 * @param string to unparse
+	 */
+	
 	public ComponentNode parse(String str) throws ParseException
 	{
 		// Parsing is accomplished via the JSONTokenizer class.
@@ -70,6 +92,13 @@ public class JSONParser
 		return _astRoot;
 
 	}
+	
+	/*
+	 * 
+	 * Helper method to separate the points in a figure
+	 * @param string builder and level
+	 */
+	
 
 	private PointNodeDatabase nodeMaker(JSONObject data) {
 		
@@ -102,6 +131,12 @@ public class JSONParser
 	
 	
 	
+	/*
+	 * 
+	 * Helper method to separate the description
+	 * @param string builder and level
+	 */
+	
 	private String descriptionMaker(JSONObject data) 
 	{
 		//get the string of description using the key as the description
@@ -109,7 +144,11 @@ public class JSONParser
 	}
 
 	
-	
+	/*
+	 * 
+	 * Helper method to separate the segments in a figure
+	 * @param string builder and level
+	 */
 	
 	private SegmentNodeDatabase segmentMaker(JSONObject data, PointNodeDatabase points) {
 		

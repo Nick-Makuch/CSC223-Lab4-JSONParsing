@@ -138,6 +138,13 @@ public class PointNodeDatabase implements ComponentNode
 	}
 		
 	
+	
+	/*
+	 * 
+	 * Method to add all the points of a figure in the correct format to a string builder
+	 * @param string builder and level
+	 */
+	
 	public void unparse(StringBuilder sb , int level) {
 		
 		sb.append("\n" + "Points:" + "\n" + "{" + "\n");
