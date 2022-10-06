@@ -3,7 +3,6 @@ package input.parser;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 
 import input.components.ComponentNode;
@@ -39,17 +38,17 @@ class JSONParserTest
 		
 		StringBuilder sb = new StringBuilder();
 
-<<<<<<< Updated upstream
+
 		node.unparse(sb, 1);
 		System.out.println(sb.toString());
-=======
+
 		node.unparse(sb, 0);
 		
 
 		node.unparse(sb, 1);
 		System.out.println(sb.toString());
 
->>>>>>> Stashed changes
+
 	}
 	
 	
@@ -63,12 +62,12 @@ class JSONParserTest
 		
 		StringBuilder sb = new StringBuilder();
 
-<<<<<<< Updated upstream
+
 		node.unparse(sb, 1);
-=======
+
 		node.unparse(sb, 0);
 				node.unparse(sb, 1);
->>>>>>> Stashed changes
+
 		System.out.println(sb.toString());
 
 	}
@@ -86,12 +85,12 @@ class JSONParserTest
 		
 		StringBuilder sb = new StringBuilder();
 
-<<<<<<< Updated upstream
+
 		node.unparse(sb, 1);
-=======
+
 		node.unparse(sb, 0);
 				node.unparse(sb, 1);
->>>>>>> Stashed changes
+
 		System.out.println(sb.toString());
 
 	}
@@ -109,17 +108,17 @@ class JSONParserTest
 		
 		StringBuilder sb = new StringBuilder();
 
-<<<<<<< Updated upstream
+
 		node.unparse(sb, 1);
 		System.out.println(sb.toString());
-=======
+
 		node.unparse(sb, 0);
 		
 
 		node.unparse(sb, 1);
 		System.out.println(sb.toString());
 
->>>>>>> Stashed changes
+
 	}
 	
 	

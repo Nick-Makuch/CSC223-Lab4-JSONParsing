@@ -34,7 +34,7 @@ public class FigureNode implements ComponentNode
 	{
 		
 		//get the description
-		sb.append(_description + "\n");
+		sb.append("Description: " + _description + "\n");
 		
 		//unparse the points calling the method from point node database
 		_points.unparse(sb, level);

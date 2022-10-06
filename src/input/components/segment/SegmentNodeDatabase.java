@@ -195,7 +195,7 @@ public class SegmentNodeDatabase implements ComponentNode {
 		}
 		
 		sb.append("}");
-		
+		sb.append("\n");
 	}
 	
 	

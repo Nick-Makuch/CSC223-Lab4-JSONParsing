@@ -90,7 +90,7 @@ public class PointNode implements ComponentNode
     @Override
     public String toString()
     {
-    	return _name + "(" + _x + ", " + _y + ")";
+    	return "(" + _name + ")" + "(" + _x + ", " + _y + ")";
 	}
     
     
